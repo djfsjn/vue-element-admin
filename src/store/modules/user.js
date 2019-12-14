@@ -54,12 +54,14 @@ const actions = {
           reject('Verification failed, please Login again.')
         }
 
-        const { roles, name, avatar, introduction } = data
+        const { roleId, name, avatar, introduction } = data
 
-        // roles must be a non-empty array
-        if (!roles || roles.length <= 0) {
-          reject('getInfo: roles must be a non-null array!')
+        // roles must be a non-empty array customizated by djf
+        if (!roleId || roleId.length <= 0) {
+          reject('获取用户信息: 用户角色没有指定!')
         }
+        const roles = [roleId]
+        data.roles = roles
 
         commit('SET_ROLES', roles)
         commit('SET_NAME', name)
