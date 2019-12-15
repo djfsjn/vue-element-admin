@@ -14,9 +14,16 @@ export function getRoles() {
   })
 }
 
+export function getAllRoles() {
+  return request({
+    url: '/roles',
+    method: 'get'
+  })
+}
+
 export function addRole(data) {
   return request({
-    url: '/role',
+    url: '/roles',
     method: 'post',
     data
   })
@@ -24,7 +31,7 @@ export function addRole(data) {
 
 export function updateRole(id, data) {
   return request({
-    url: `/role/${id}`,
+    url: `/roles/${id}`,
     method: 'put',
     data
   })
@@ -32,7 +39,7 @@ export function updateRole(id, data) {
 
 export function deleteRole(id) {
   return request({
-    url: `/role/${id}`,
+    url: `/roles/${id}`,
     method: 'delete'
   })
 }

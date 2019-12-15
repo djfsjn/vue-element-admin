@@ -383,6 +383,20 @@ export const asyncRoutes = [
     ]
   },
 
+  {
+    path: '/user',
+    component: Layout,
+    children: [{
+      path: 'index',
+      component: () => import('@/views/user/index'),
+      name: 'User',
+      meta: {
+        title: '用户管理',
+        icon: 'peoples'
+      }
+    }]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
